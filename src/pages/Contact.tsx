@@ -48,14 +48,14 @@ export function Contact() {
             <Reveal from="left">
               <p className="process-pill">
                 <span className="process-spark" aria-hidden="true" />
-                Ideas → Design → Develop → Launch
+                Strategy • Design • Build • Support
               </p>
               <h1>
                 Tell us what you want to <span className="gradient-text">launch</span>
               </h1>
               <p>
-                Share a short brief. We reply within two business days with questions, a suggested
-                approach, and a ballpark timeline.
+                Share a short brief and we’ll reply with an approach, timeline, and recommendations on
+                the best path for a successful build.
               </p>
               <p>
                 Email:{' '}
@@ -65,7 +65,7 @@ export function Contact() {
               </p>
               <div className="hero-actions">
                 <Link className="btn btn-link" to="/services">
-                  View Our Services
+                  View services
                   <span className="btn-circle" aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -73,7 +73,6 @@ export function Contact() {
             <ul className="checklist">
               {values.map((item) => (
                 <li key={item}>
-                  <span className="live-spark" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -83,10 +82,10 @@ export function Contact() {
           {sent ? (
             <Reveal from="right" delay={100} className="notice goal-card">
               <p className="kicker">Message received</p>
-              <h3>Thanks — we have the brief.</h3>
+              <h3>Thanks — we’ve got the brief.</h3>
               <p>
-                This demo form stays on the page. In production, connect it to your inbox, HubSpot,
-                or a serverless function.
+                This demo form is ready for integration with your inbox, CRM, or a serverless email
+                workflow in production.
               </p>
               <Link className="btn btn-primary" to="/" style={{ marginTop: 18 }}>
                 Back to Home →
@@ -151,7 +150,7 @@ export function Contact() {
         </div>
 
         <div className="wrap">
-          <p className="hero-tagline">— Your Idea + Our Expertise = Real Results —</p>
+          <p className="hero-tagline">— Designed to move your next idea forward —</p>
         </div>
       </section>
     </main>

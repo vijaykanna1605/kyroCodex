@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Logo } from './Icons'
 
@@ -11,9 +11,33 @@ const links = [
 
 export function Layout() {
   const [open, setOpen] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [direction, setDirection] = useState<'down' | 'up'>('down')
+
+  useEffect(() => {
+    let lastY = window.scrollY
+
+    const handleScroll = () => {
+      const { scrollY, innerHeight } = window
+      const maxScroll = Math.max(document.documentElement.scrollHeight - innerHeight, 1)
+      const nextProgress = (scrollY / maxScroll) * 100
+
+      setDirection(scrollY >= lastY ? 'down' : 'up')
+      lastY = scrollY
+      setProgress(Math.min(Math.max(nextProgress, 0), 100))
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <div className="page">
+      <div className={`scroll-indicator ${direction}`} aria-hidden="true">
+        <span className="scroll-indicator-bar" style={{ width: `${progress}%` }} />
+      </div>
+
       <header className="site-header">
         <div className="wrap header-inner">
           <Link className="brand" to="/" onClick={() => setOpen(false)}>
@@ -33,7 +57,7 @@ export function Layout() {
             ))}
           </nav>
           <Link className="header-cta" to="/contact">
-            Let’s Build Together →
+            Book a strategy call →
           </Link>
           <button className="menu-btn" type="button" onClick={() => setOpen((v) => !v)}>
             Menu

@@ -2,35 +2,37 @@ import { Link } from 'react-router-dom'
 import { HeroDevices } from '../components/HeroDevices'
 import { Icon } from '../components/Icons'
 import { Reveal } from '../components/Reveal'
-import { services, values } from '../data/content'
+import { services, stats, values } from '../data/content'
 
 export function Home() {
   return (
     <main className="home-landing">
-      <section className="hero hero-landing">
+      <section className="section inner-hero">
         <div className="wrap hero-grid">
-          <Reveal from="left" className="hero-copy">
+          <Reveal from="left" className="hero-copy page-intro">
             <p className="process-pill">
               <span className="process-spark" aria-hidden="true" />
-              Ideas → Design → Develop → Launch
+              Web apps • Websites • Cloud • UX
             </p>
             <h1>
-              We turn ideas into <span className="gradient-text">digital products</span>
+              Design and build the <span className="gradient-text">digital product</span> your brand
+              deserves.
             </h1>
             <p>
-              KyroCodeX is a software development company focused on building modern websites,
-              applications, and digital products for businesses.
+              KyroCodeX creates premium websites, web apps, UI/UX systems, and cloud-powered
+              experiences for businesses that want better performance, sharper design, and stronger
+              growth.
             </p>
             <p>
-              We combine UI/UX design, web development, application development, and cloud
-              solutions to turn ideas into reliable, scalable, and easy-to-use digital experiences.
+              We combine strategy, product thinking, interface design, and technical delivery to help
+              teams launch faster and support what they build long after go-live.
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/contact">
                 Start Your Project →
               </Link>
               <Link className="btn btn-link" to="/services">
-                View Our Services
+                Explore Services
                 <span className="btn-circle" aria-hidden="true">→</span>
               </Link>
             </div>
@@ -40,62 +42,41 @@ export function Home() {
             <HeroDevices />
           </Reveal>
         </div>
-
-        <div className="wrap">
-          <Reveal from="up" delay={80} className="service-rail">
-            {services.map((service) => (
-              <article className="service-rail-item" key={service.slug}>
-                <div className={`icon icon-${service.icon}`}>
-                  <Icon name={service.icon as 'code' | 'layers' | 'pen' | 'cloud'} />
-                </div>
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.summary}</p>
-                </div>
-              </article>
-            ))}
-          </Reveal>
-          <p className="hero-tagline">— Your Idea + Our Expertise = Real Results —</p>
-        </div>
       </section>
 
       <section className="section">
         <div className="wrap split">
           <div>
             <Reveal from="left">
-              <p className="process-pill">
-                <span className="process-spark" aria-hidden="true" />
-                Why KyroCodeX
-              </p>
+              <p className="kicker">Why teams choose us</p>
               <h2>
-                More than just code. We build{' '}
-                <span className="gradient-text">partnerships</span>.
+                Built for <span className="gradient-text">clarity, speed, and momentum</span>.
               </h2>
               <p>
-                From a business website to a custom web or mobile application, we work closely with
-                our clients to understand their goals, design the right experience, develop the
-                product, and help bring it to life.
+                Whether you need a sharper website, a high-performance web app, or a partner to
+                support your operational stack, we blend design and engineering to create digital
+                experiences that feel premium and work hard.
               </p>
             </Reveal>
             <ul className="checklist">
               {values.map((item) => (
                 <li key={item}>
-                  <span className="live-spark" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           <Reveal from="right" delay={140} className="card goal-card">
+            <p className="kicker">Built for growth</p>
             <h3>
-              Our goal is <span className="gradient-text">simple</span>
+              Strategy, design, and <span className="gradient-text">support</span> in one partner.
             </h3>
             <p>
-              Build technology that looks great, works smoothly, scales with your business, and
-              creates real value for your customers.
+              We help businesses turn ambition into useful digital experiences that look great,
+              feel intuitive, and scale without friction.
             </p>
             <Link className="btn btn-primary" to="/contact" style={{ marginTop: 18 }}>
-              Start Your Project →
+              Book a discovery call →
             </Link>
           </Reveal>
         </div>
@@ -103,10 +84,68 @@ export function Home() {
 
       <section className="section">
         <div className="wrap">
+          <Reveal from="up" className="section-head">
+            <div>
+              <p className="kicker">Core capabilities</p>
+              <h2>Everything you need to ship better experiences.</h2>
+            </div>
+          </Reveal>
+          <div className="cards-4">
+            {services.map((service, index) => (
+              <Reveal
+                as="article"
+                className="card service-card"
+                key={service.slug}
+                from={index % 2 === 0 ? 'left' : 'right'}
+                delay={index * 100}
+              >
+                <div className={`icon icon-${service.icon}`}>
+                  <Icon name={service.icon as 'code' | 'layers' | 'pen' | 'cloud'} />
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.summary}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <Reveal from="up" className="section-head stats-head">
+            <div>
+              <p className="kicker">Performance at a glance</p>
+              <h2>Design. Code. Precision.</h2>
+            </div>
+          </Reveal>
+          <div className="stats">
+            {stats.map((stat, index) => {
+              const directions = ['up', 'down', 'left', 'right'] as const
+              return (
+                <Reveal
+                  className="stat"
+                  key={stat.label}
+                  from={directions[index % directions.length]}
+                  delay={index * 120}
+                >
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </Reveal>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
           <Reveal from="up" className="cta">
-            <p className="kicker">Let’s create something useful</p>
-            <h2>Got an idea? Let’s build it.</h2>
-            <p>A website, an app, or a full product — tell us what you need to ship next.</p>
+            <p className="kicker">Let’s build what’s next</p>
+            <h2>Strong design. Reliable build. Lifelong support.</h2>
+            <p>
+              Whether you’re launching a new website, building a web app, or upgrading your digital
+              presence, we can help you move faster with less friction.
+            </p>
             <Link className="btn btn-primary" to="/contact">
               Start Your Project →
             </Link>

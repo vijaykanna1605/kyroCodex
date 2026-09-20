@@ -2,53 +2,53 @@ export const services = [
   {
     slug: 'websites',
     icon: 'code',
-    title: 'Web Development',
-    summary: 'Modern, fast websites that grow with your brand.',
+    title: 'Website design & build',
+    summary: 'Conversion-focused websites built to look premium and perform fast.',
     details:
-      'We design and ship marketing sites, landing pages, and content platforms with clean component systems, SEO foundations, and analytics wired in from day one.',
+      'We design and build sharp marketing websites, service pages, and launch funnels that help businesses tell their story clearly and convert more visitors into customers.',
   },
   {
     slug: 'applications',
     icon: 'layers',
-    title: 'Application Development',
-    summary: 'Custom web and mobile apps built for real users.',
+    title: 'Web app development',
+    summary: 'Tailored product experiences for teams launching new digital tools.',
     details:
-      'From customer portals to internal tools, we build React and API-backed products with auth, roles, and deployment pipelines that hold up in production.',
+      'From dashboards and portals to SaaS platforms and internal systems, we build clean, scalable web apps with the speed, logic, and polish your users need from day one.',
   },
   {
     slug: 'design',
     icon: 'pen',
-    title: 'UI/UX Design',
-    summary: 'Clean interfaces that feel simple and intentional.',
+    title: 'UI/UX systems',
+    summary: 'Intuitive experiences that feel premium and easy to use.',
     details:
-      'Research, flows, and high-fidelity UI for websites and products. We hand off design systems your engineers can actually implement.',
+      'We map user journeys, design thoughtful interfaces, and create UI systems that reduce friction, improve clarity, and make product decisions easier for the whole team.',
   },
   {
     slug: 'cloud',
     icon: 'cloud',
-    title: 'Cloud Solutions',
-    summary: 'Reliable hosting, releases, and scale when you need it.',
+    title: 'Cloud & support',
+    summary: 'Stable hosting, deployment, maintenance, and long-term product care.',
     details:
-      'CI/CD, hosting, environments, and observability so new work can ship without freezing the rest of the product.',
+      'We help teams deploy on modern cloud infrastructure, automate releases, monitor performance, and keep products running smoothly after launch through ongoing support.',
   },
 ]
 
 export const stats = [
-  { value: '4+', label: 'Services' },
-  { value: 'Weekly', label: 'Demos & updates' },
-  { value: '1:1', label: 'One-to-one support' },
-  { value: 'Direct', label: 'First delivery' },
+  { value: '99.9%', label: 'Cloud reliability target' },
+  { value: '24/7', label: 'Support for live projects' },
+  { value: '2 wks', label: 'Typical concept-to-prototype sprint' },
+  { value: 'Live', label: 'Builds launched with momentum' },
 ]
 
 export const values = [
-  'Clean, documented code that another team can own.',
-  'Clear timelines and weekly status — no surprise launches.',
-  'Support after go-live, not just a handoff zip file.',
+  'Clear product strategy before code, so teams move with confidence.',
+  'Fast, responsive experiences designed around real user behavior and business goals.',
+  'Reliable support and cloud maintenance to keep products stable after launch.',
 ]
 
 export const processSteps = [
-  { title: 'Discover', body: 'Goals, users, constraints, and what “done” looks like.' },
-  { title: 'Design', body: 'Flows and UI that match the brand and the real workflow.' },
-  { title: 'Build', body: 'Production React, APIs, and content your team can update.' },
-  { title: 'Launch', body: 'QA, analytics, hosting, and a plan for the first 90 days.' },
+  { title: 'Discover', body: 'We define your goals, audience, product direction, and the outcomes that matter most.' },
+  { title: 'Design', body: 'We shape the experience, flows, and visuals so your product feels clear and premium.' },
+  { title: 'Build', body: 'We develop the website or app in production-ready code with scalable architecture.' },
+  { title: 'Launch & Support', body: 'We push live, monitor performance, and support improvements after release.' },
 ]
